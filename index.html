@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
-            width: 1645px;
-            height: 1076px;
+            width: 548px;
+            height: 358px;
         }
         </style>
         <title></title>
@@ -44,12 +44,16 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-6.516125579212379,106.86608258270239],[-6.17113188894264,107.39171159255334]]);
+        })
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+            map.setMaxBounds(map.getBounds());
         }
         map.createPane('pane_GoogleSatellite_0');
         map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
@@ -448,187 +452,282 @@
         });
         bounds_group.addLayer(layer_CommercialBuilding_12);
         map.addLayer(layer_CommercialBuilding_12);
-        map.createPane('pane_1_Krig_E_Coli_1_13');
-        map.getPane('pane_1_Krig_E_Coli_1_13').style.zIndex = 413;
-        var img_1_Krig_E_Coli_1_13 = 'data/1_Krig_E_Coli_1_13.png';
-        var img_bounds_1_Krig_E_Coli_1_13 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_E_Coli_1_13 = new L.imageOverlay(img_1_Krig_E_Coli_1_13,
-                                              img_bounds_1_Krig_E_Coli_1_13,
-                                              {pane: 'pane_1_Krig_E_Coli_1_13'});
-        bounds_group.addLayer(layer_1_Krig_E_Coli_1_13);
-        map.addLayer(layer_1_Krig_E_Coli_1_13);
-        map.createPane('pane_1_Krig_T_Coli_1_14');
-        map.getPane('pane_1_Krig_T_Coli_1_14').style.zIndex = 414;
-        var img_1_Krig_T_Coli_1_14 = 'data/1_Krig_T_Coli_1_14.png';
-        var img_bounds_1_Krig_T_Coli_1_14 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_T_Coli_1_14 = new L.imageOverlay(img_1_Krig_T_Coli_1_14,
-                                              img_bounds_1_Krig_T_Coli_1_14,
-                                              {pane: 'pane_1_Krig_T_Coli_1_14'});
-        bounds_group.addLayer(layer_1_Krig_T_Coli_1_14);
-        map.addLayer(layer_1_Krig_T_Coli_1_14);
-        map.createPane('pane_1_Krig_F_Coli_1_15');
-        map.getPane('pane_1_Krig_F_Coli_1_15').style.zIndex = 415;
-        var img_1_Krig_F_Coli_1_15 = 'data/1_Krig_F_Coli_1_15.png';
-        var img_bounds_1_Krig_F_Coli_1_15 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_F_Coli_1_15 = new L.imageOverlay(img_1_Krig_F_Coli_1_15,
-                                              img_bounds_1_Krig_F_Coli_1_15,
-                                              {pane: 'pane_1_Krig_F_Coli_1_15'});
-        bounds_group.addLayer(layer_1_Krig_F_Coli_1_15);
-        map.addLayer(layer_1_Krig_F_Coli_1_15);
-        map.createPane('pane_1_Krig_Surfaktan_1_16');
-        map.getPane('pane_1_Krig_Surfaktan_1_16').style.zIndex = 416;
-        var img_1_Krig_Surfaktan_1_16 = 'data/1_Krig_Surfaktan_1_16.png';
-        var img_bounds_1_Krig_Surfaktan_1_16 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Surfaktan_1_16 = new L.imageOverlay(img_1_Krig_Surfaktan_1_16,
-                                              img_bounds_1_Krig_Surfaktan_1_16,
-                                              {pane: 'pane_1_Krig_Surfaktan_1_16'});
-        bounds_group.addLayer(layer_1_Krig_Surfaktan_1_16);
-        map.addLayer(layer_1_Krig_Surfaktan_1_16);
-        map.createPane('pane_1_Krig_H2s_1_17');
-        map.getPane('pane_1_Krig_H2s_1_17').style.zIndex = 417;
-        var img_1_Krig_H2s_1_17 = 'data/1_Krig_H2s_1_17.png';
-        var img_bounds_1_Krig_H2s_1_17 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_H2s_1_17 = new L.imageOverlay(img_1_Krig_H2s_1_17,
-                                              img_bounds_1_Krig_H2s_1_17,
-                                              {pane: 'pane_1_Krig_H2s_1_17'});
-        bounds_group.addLayer(layer_1_Krig_H2s_1_17);
-        map.addLayer(layer_1_Krig_H2s_1_17);
-        map.createPane('pane_1_Krig_Cl_1_18');
-        map.getPane('pane_1_Krig_Cl_1_18').style.zIndex = 418;
-        var img_1_Krig_Cl_1_18 = 'data/1_Krig_Cl_1_18.png';
-        var img_bounds_1_Krig_Cl_1_18 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Cl_1_18 = new L.imageOverlay(img_1_Krig_Cl_1_18,
-                                              img_bounds_1_Krig_Cl_1_18,
-                                              {pane: 'pane_1_Krig_Cl_1_18'});
-        bounds_group.addLayer(layer_1_Krig_Cl_1_18);
-        map.addLayer(layer_1_Krig_Cl_1_18);
-        map.createPane('pane_1_Krig_Sulphate_1_19');
-        map.getPane('pane_1_Krig_Sulphate_1_19').style.zIndex = 419;
-        var img_1_Krig_Sulphate_1_19 = 'data/1_Krig_Sulphate_1_19.png';
-        var img_bounds_1_Krig_Sulphate_1_19 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Sulphate_1_19 = new L.imageOverlay(img_1_Krig_Sulphate_1_19,
-                                              img_bounds_1_Krig_Sulphate_1_19,
-                                              {pane: 'pane_1_Krig_Sulphate_1_19'});
-        bounds_group.addLayer(layer_1_Krig_Sulphate_1_19);
-        map.addLayer(layer_1_Krig_Sulphate_1_19);
-        map.createPane('pane_1_Krig_Nitrate_1_20');
-        map.getPane('pane_1_Krig_Nitrate_1_20').style.zIndex = 420;
-        var img_1_Krig_Nitrate_1_20 = 'data/1_Krig_Nitrate_1_20.png';
-        var img_bounds_1_Krig_Nitrate_1_20 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Nitrate_1_20 = new L.imageOverlay(img_1_Krig_Nitrate_1_20,
-                                              img_bounds_1_Krig_Nitrate_1_20,
-                                              {pane: 'pane_1_Krig_Nitrate_1_20'});
-        bounds_group.addLayer(layer_1_Krig_Nitrate_1_20);
-        map.addLayer(layer_1_Krig_Nitrate_1_20);
-        map.createPane('pane_1_Krig_Nitrite_1_21');
-        map.getPane('pane_1_Krig_Nitrite_1_21').style.zIndex = 421;
-        var img_1_Krig_Nitrite_1_21 = 'data/1_Krig_Nitrite_1_21.png';
-        var img_bounds_1_Krig_Nitrite_1_21 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Nitrite_1_21 = new L.imageOverlay(img_1_Krig_Nitrite_1_21,
-                                              img_bounds_1_Krig_Nitrite_1_21,
-                                              {pane: 'pane_1_Krig_Nitrite_1_21'});
-        bounds_group.addLayer(layer_1_Krig_Nitrite_1_21);
-        map.addLayer(layer_1_Krig_Nitrite_1_21);
-        map.createPane('pane_1_Krig_Ammonia_1_22');
-        map.getPane('pane_1_Krig_Ammonia_1_22').style.zIndex = 422;
-        var img_1_Krig_Ammonia_1_22 = 'data/1_Krig_Ammonia_1_22.png';
-        var img_bounds_1_Krig_Ammonia_1_22 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Ammonia_1_22 = new L.imageOverlay(img_1_Krig_Ammonia_1_22,
-                                              img_bounds_1_Krig_Ammonia_1_22,
-                                              {pane: 'pane_1_Krig_Ammonia_1_22'});
-        bounds_group.addLayer(layer_1_Krig_Ammonia_1_22);
-        map.addLayer(layer_1_Krig_Ammonia_1_22);
-        map.createPane('pane_1_Krig_Zn_1_23');
-        map.getPane('pane_1_Krig_Zn_1_23').style.zIndex = 423;
-        var img_1_Krig_Zn_1_23 = 'data/1_Krig_Zn_1_23.png';
-        var img_bounds_1_Krig_Zn_1_23 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Zn_1_23 = new L.imageOverlay(img_1_Krig_Zn_1_23,
-                                              img_bounds_1_Krig_Zn_1_23,
-                                              {pane: 'pane_1_Krig_Zn_1_23'});
-        bounds_group.addLayer(layer_1_Krig_Zn_1_23);
-        map.addLayer(layer_1_Krig_Zn_1_23);
-        map.createPane('pane_1_Krig_Phosphate_1_24');
-        map.getPane('pane_1_Krig_Phosphate_1_24').style.zIndex = 424;
-        var img_1_Krig_Phosphate_1_24 = 'data/1_Krig_Phosphate_1_24.png';
-        var img_bounds_1_Krig_Phosphate_1_24 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Phosphate_1_24 = new L.imageOverlay(img_1_Krig_Phosphate_1_24,
-                                              img_bounds_1_Krig_Phosphate_1_24,
-                                              {pane: 'pane_1_Krig_Phosphate_1_24'});
-        bounds_group.addLayer(layer_1_Krig_Phosphate_1_24);
-        map.addLayer(layer_1_Krig_Phosphate_1_24);
-        map.createPane('pane_1_Krig_Mn_1_25');
-        map.getPane('pane_1_Krig_Mn_1_25').style.zIndex = 425;
-        var img_1_Krig_Mn_1_25 = 'data/1_Krig_Mn_1_25.png';
-        var img_bounds_1_Krig_Mn_1_25 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Mn_1_25 = new L.imageOverlay(img_1_Krig_Mn_1_25,
-                                              img_bounds_1_Krig_Mn_1_25,
-                                              {pane: 'pane_1_Krig_Mn_1_25'});
-        bounds_group.addLayer(layer_1_Krig_Mn_1_25);
-        map.addLayer(layer_1_Krig_Mn_1_25);
-        map.createPane('pane_1_Krig_Fe_1_26');
-        map.getPane('pane_1_Krig_Fe_1_26').style.zIndex = 426;
-        var img_1_Krig_Fe_1_26 = 'data/1_Krig_Fe_1_26.png';
-        var img_bounds_1_Krig_Fe_1_26 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Fe_1_26 = new L.imageOverlay(img_1_Krig_Fe_1_26,
-                                              img_bounds_1_Krig_Fe_1_26,
-                                              {pane: 'pane_1_Krig_Fe_1_26'});
-        bounds_group.addLayer(layer_1_Krig_Fe_1_26);
-        map.addLayer(layer_1_Krig_Fe_1_26);
-        map.createPane('pane_1_Krig_BOD_1_27');
-        map.getPane('pane_1_Krig_BOD_1_27').style.zIndex = 427;
-        var img_1_Krig_BOD_1_27 = 'data/1_Krig_BOD_1_27.png';
-        var img_bounds_1_Krig_BOD_1_27 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_BOD_1_27 = new L.imageOverlay(img_1_Krig_BOD_1_27,
-                                              img_bounds_1_Krig_BOD_1_27,
-                                              {pane: 'pane_1_Krig_BOD_1_27'});
-        bounds_group.addLayer(layer_1_Krig_BOD_1_27);
-        map.addLayer(layer_1_Krig_BOD_1_27);
-        map.createPane('pane_1_Krig_COD_4_28');
-        map.getPane('pane_1_Krig_COD_4_28').style.zIndex = 428;
-        var img_1_Krig_COD_4_28 = 'data/1_Krig_COD_4_28.png';
-        var img_bounds_1_Krig_COD_4_28 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_COD_4_28 = new L.imageOverlay(img_1_Krig_COD_4_28,
-                                              img_bounds_1_Krig_COD_4_28,
-                                              {pane: 'pane_1_Krig_COD_4_28'});
-        bounds_group.addLayer(layer_1_Krig_COD_4_28);
-        map.addLayer(layer_1_Krig_COD_4_28);
-        map.createPane('pane_1_Krig_DO_1_29');
-        map.getPane('pane_1_Krig_DO_1_29').style.zIndex = 429;
-        var img_1_Krig_DO_1_29 = 'data/1_Krig_DO_1_29.png';
-        var img_bounds_1_Krig_DO_1_29 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_DO_1_29 = new L.imageOverlay(img_1_Krig_DO_1_29,
-                                              img_bounds_1_Krig_DO_1_29,
-                                              {pane: 'pane_1_Krig_DO_1_29'});
-        bounds_group.addLayer(layer_1_Krig_DO_1_29);
-        map.addLayer(layer_1_Krig_DO_1_29);
-        map.createPane('pane_1_Krig_pH_1_30');
-        map.getPane('pane_1_Krig_pH_1_30').style.zIndex = 430;
-        var img_1_Krig_pH_1_30 = 'data/1_Krig_pH_1_30.png';
-        var img_bounds_1_Krig_pH_1_30 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_pH_1_30 = new L.imageOverlay(img_1_Krig_pH_1_30,
-                                              img_bounds_1_Krig_pH_1_30,
-                                              {pane: 'pane_1_Krig_pH_1_30'});
-        bounds_group.addLayer(layer_1_Krig_pH_1_30);
-        map.addLayer(layer_1_Krig_pH_1_30);
-        map.createPane('pane_1_Krig_Turbidity_1_31');
-        map.getPane('pane_1_Krig_Turbidity_1_31').style.zIndex = 431;
-        var img_1_Krig_Turbidity_1_31 = 'data/1_Krig_Turbidity_1_31.png';
-        var img_bounds_1_Krig_Turbidity_1_31 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_Turbidity_1_31 = new L.imageOverlay(img_1_Krig_Turbidity_1_31,
-                                              img_bounds_1_Krig_Turbidity_1_31,
-                                              {pane: 'pane_1_Krig_Turbidity_1_31'});
-        bounds_group.addLayer(layer_1_Krig_Turbidity_1_31);
-        map.addLayer(layer_1_Krig_Turbidity_1_31);
-        map.createPane('pane_1_Krig_TDS_1_32');
-        map.getPane('pane_1_Krig_TDS_1_32').style.zIndex = 432;
-        var img_1_Krig_TDS_1_32 = 'data/1_Krig_TDS_1_32.png';
-        var img_bounds_1_Krig_TDS_1_32 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
-        var layer_1_Krig_TDS_1_32 = new L.imageOverlay(img_1_Krig_TDS_1_32,
-                                              img_bounds_1_Krig_TDS_1_32,
-                                              {pane: 'pane_1_Krig_TDS_1_32'});
-        bounds_group.addLayer(layer_1_Krig_TDS_1_32);
-        map.addLayer(layer_1_Krig_TDS_1_32);
+        map.createPane('pane_EColi_13');
+        map.getPane('pane_EColi_13').style.zIndex = 413;
+        var img_EColi_13 = 'data/EColi_13.png';
+        var img_bounds_EColi_13 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_EColi_13 = new L.imageOverlay(img_EColi_13,
+                                              img_bounds_EColi_13,
+                                              {pane: 'pane_EColi_13'});
+        bounds_group.addLayer(layer_EColi_13);
+        map.addLayer(layer_EColi_13);
+        map.createPane('pane_TColi_14');
+        map.getPane('pane_TColi_14').style.zIndex = 414;
+        var img_TColi_14 = 'data/TColi_14.png';
+        var img_bounds_TColi_14 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_TColi_14 = new L.imageOverlay(img_TColi_14,
+                                              img_bounds_TColi_14,
+                                              {pane: 'pane_TColi_14'});
+        bounds_group.addLayer(layer_TColi_14);
+        map.addLayer(layer_TColi_14);
+        map.createPane('pane_FColi_15');
+        map.getPane('pane_FColi_15').style.zIndex = 415;
+        var img_FColi_15 = 'data/FColi_15.png';
+        var img_bounds_FColi_15 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_FColi_15 = new L.imageOverlay(img_FColi_15,
+                                              img_bounds_FColi_15,
+                                              {pane: 'pane_FColi_15'});
+        bounds_group.addLayer(layer_FColi_15);
+        map.addLayer(layer_FColi_15);
+        map.createPane('pane_Surfactant_16');
+        map.getPane('pane_Surfactant_16').style.zIndex = 416;
+        var img_Surfactant_16 = 'data/Surfactant_16.png';
+        var img_bounds_Surfactant_16 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Surfactant_16 = new L.imageOverlay(img_Surfactant_16,
+                                              img_bounds_Surfactant_16,
+                                              {pane: 'pane_Surfactant_16'});
+        bounds_group.addLayer(layer_Surfactant_16);
+        map.addLayer(layer_Surfactant_16);
+        map.createPane('pane_H2S_17');
+        map.getPane('pane_H2S_17').style.zIndex = 417;
+        var img_H2S_17 = 'data/H2S_17.png';
+        var img_bounds_H2S_17 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_H2S_17 = new L.imageOverlay(img_H2S_17,
+                                              img_bounds_H2S_17,
+                                              {pane: 'pane_H2S_17'});
+        bounds_group.addLayer(layer_H2S_17);
+        map.addLayer(layer_H2S_17);
+        map.createPane('pane_Cl_18');
+        map.getPane('pane_Cl_18').style.zIndex = 418;
+        var img_Cl_18 = 'data/Cl_18.png';
+        var img_bounds_Cl_18 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Cl_18 = new L.imageOverlay(img_Cl_18,
+                                              img_bounds_Cl_18,
+                                              {pane: 'pane_Cl_18'});
+        bounds_group.addLayer(layer_Cl_18);
+        map.addLayer(layer_Cl_18);
+        map.createPane('pane_Sulphate_19');
+        map.getPane('pane_Sulphate_19').style.zIndex = 419;
+        var img_Sulphate_19 = 'data/Sulphate_19.png';
+        var img_bounds_Sulphate_19 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Sulphate_19 = new L.imageOverlay(img_Sulphate_19,
+                                              img_bounds_Sulphate_19,
+                                              {pane: 'pane_Sulphate_19'});
+        bounds_group.addLayer(layer_Sulphate_19);
+        map.addLayer(layer_Sulphate_19);
+        map.createPane('pane_Nitrate_20');
+        map.getPane('pane_Nitrate_20').style.zIndex = 420;
+        var img_Nitrate_20 = 'data/Nitrate_20.png';
+        var img_bounds_Nitrate_20 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Nitrate_20 = new L.imageOverlay(img_Nitrate_20,
+                                              img_bounds_Nitrate_20,
+                                              {pane: 'pane_Nitrate_20'});
+        bounds_group.addLayer(layer_Nitrate_20);
+        map.addLayer(layer_Nitrate_20);
+        map.createPane('pane_Nitrite_21');
+        map.getPane('pane_Nitrite_21').style.zIndex = 421;
+        var img_Nitrite_21 = 'data/Nitrite_21.png';
+        var img_bounds_Nitrite_21 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Nitrite_21 = new L.imageOverlay(img_Nitrite_21,
+                                              img_bounds_Nitrite_21,
+                                              {pane: 'pane_Nitrite_21'});
+        bounds_group.addLayer(layer_Nitrite_21);
+        map.addLayer(layer_Nitrite_21);
+        map.createPane('pane_Ammonia_22');
+        map.getPane('pane_Ammonia_22').style.zIndex = 422;
+        var img_Ammonia_22 = 'data/Ammonia_22.png';
+        var img_bounds_Ammonia_22 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Ammonia_22 = new L.imageOverlay(img_Ammonia_22,
+                                              img_bounds_Ammonia_22,
+                                              {pane: 'pane_Ammonia_22'});
+        bounds_group.addLayer(layer_Ammonia_22);
+        map.addLayer(layer_Ammonia_22);
+        map.createPane('pane_Zn_23');
+        map.getPane('pane_Zn_23').style.zIndex = 423;
+        var img_Zn_23 = 'data/Zn_23.png';
+        var img_bounds_Zn_23 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Zn_23 = new L.imageOverlay(img_Zn_23,
+                                              img_bounds_Zn_23,
+                                              {pane: 'pane_Zn_23'});
+        bounds_group.addLayer(layer_Zn_23);
+        map.addLayer(layer_Zn_23);
+        map.createPane('pane_Phosphate_24');
+        map.getPane('pane_Phosphate_24').style.zIndex = 424;
+        var img_Phosphate_24 = 'data/Phosphate_24.png';
+        var img_bounds_Phosphate_24 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Phosphate_24 = new L.imageOverlay(img_Phosphate_24,
+                                              img_bounds_Phosphate_24,
+                                              {pane: 'pane_Phosphate_24'});
+        bounds_group.addLayer(layer_Phosphate_24);
+        map.addLayer(layer_Phosphate_24);
+        map.createPane('pane_Mn_25');
+        map.getPane('pane_Mn_25').style.zIndex = 425;
+        var img_Mn_25 = 'data/Mn_25.png';
+        var img_bounds_Mn_25 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Mn_25 = new L.imageOverlay(img_Mn_25,
+                                              img_bounds_Mn_25,
+                                              {pane: 'pane_Mn_25'});
+        bounds_group.addLayer(layer_Mn_25);
+        map.addLayer(layer_Mn_25);
+        map.createPane('pane_Fe_26');
+        map.getPane('pane_Fe_26').style.zIndex = 426;
+        var img_Fe_26 = 'data/Fe_26.png';
+        var img_bounds_Fe_26 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Fe_26 = new L.imageOverlay(img_Fe_26,
+                                              img_bounds_Fe_26,
+                                              {pane: 'pane_Fe_26'});
+        bounds_group.addLayer(layer_Fe_26);
+        map.addLayer(layer_Fe_26);
+        map.createPane('pane_BOD_27');
+        map.getPane('pane_BOD_27').style.zIndex = 427;
+        var img_BOD_27 = 'data/BOD_27.png';
+        var img_bounds_BOD_27 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_BOD_27 = new L.imageOverlay(img_BOD_27,
+                                              img_bounds_BOD_27,
+                                              {pane: 'pane_BOD_27'});
+        bounds_group.addLayer(layer_BOD_27);
+        map.addLayer(layer_BOD_27);
+        map.createPane('pane_COD_28');
+        map.getPane('pane_COD_28').style.zIndex = 428;
+        var img_COD_28 = 'data/COD_28.png';
+        var img_bounds_COD_28 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_COD_28 = new L.imageOverlay(img_COD_28,
+                                              img_bounds_COD_28,
+                                              {pane: 'pane_COD_28'});
+        bounds_group.addLayer(layer_COD_28);
+        map.addLayer(layer_COD_28);
+        map.createPane('pane_DO_29');
+        map.getPane('pane_DO_29').style.zIndex = 429;
+        var img_DO_29 = 'data/DO_29.png';
+        var img_bounds_DO_29 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_DO_29 = new L.imageOverlay(img_DO_29,
+                                              img_bounds_DO_29,
+                                              {pane: 'pane_DO_29'});
+        bounds_group.addLayer(layer_DO_29);
+        map.addLayer(layer_DO_29);
+        map.createPane('pane_pH_30');
+        map.getPane('pane_pH_30').style.zIndex = 430;
+        var img_pH_30 = 'data/pH_30.png';
+        var img_bounds_pH_30 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_pH_30 = new L.imageOverlay(img_pH_30,
+                                              img_bounds_pH_30,
+                                              {pane: 'pane_pH_30'});
+        bounds_group.addLayer(layer_pH_30);
+        map.addLayer(layer_pH_30);
+        map.createPane('pane_Turbidity_31');
+        map.getPane('pane_Turbidity_31').style.zIndex = 431;
+        var img_Turbidity_31 = 'data/Turbidity_31.png';
+        var img_bounds_Turbidity_31 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_Turbidity_31 = new L.imageOverlay(img_Turbidity_31,
+                                              img_bounds_Turbidity_31,
+                                              {pane: 'pane_Turbidity_31'});
+        bounds_group.addLayer(layer_Turbidity_31);
+        map.addLayer(layer_Turbidity_31);
+        map.createPane('pane_TDS_32');
+        map.getPane('pane_TDS_32').style.zIndex = 432;
+        var img_TDS_32 = 'data/TDS_32.png';
+        var img_bounds_TDS_32 = [[-6.450295155947543,106.87879516194079],[-6.236982892307653,107.37887090702769]];
+        var layer_TDS_32 = new L.imageOverlay(img_TDS_32,
+                                              img_bounds_TDS_32,
+                                              {pane: 'pane_TDS_32'});
+        bounds_group.addLayer(layer_TDS_32);
+        map.addLayer(layer_TDS_32);
         function pop_SamplingPoint_33(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Lat</th>\
+                        <td>' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Long</th>\
+                        <td>' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TDS</th>\
+                        <td>' + (feature.properties['TDS'] !== null ? autolinker.link(feature.properties['TDS'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Turbidity</th>\
+                        <td>' + (feature.properties['Turbidity'] !== null ? autolinker.link(feature.properties['Turbidity'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">pH</th>\
+                        <td>' + (feature.properties['pH'] !== null ? autolinker.link(feature.properties['pH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DO</th>\
+                        <td>' + (feature.properties['DO'] !== null ? autolinker.link(feature.properties['DO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">BOD</th>\
+                        <td>' + (feature.properties['BOD'] !== null ? autolinker.link(feature.properties['BOD'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">COD</th>\
+                        <td>' + (feature.properties['COD'] !== null ? autolinker.link(feature.properties['COD'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Fe</th>\
+                        <td>' + (feature.properties['Fe'] !== null ? autolinker.link(feature.properties['Fe'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Mn</th>\
+                        <td>' + (feature.properties['Mn'] !== null ? autolinker.link(feature.properties['Mn'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Phosphate</th>\
+                        <td>' + (feature.properties['Phosphate'] !== null ? autolinker.link(feature.properties['Phosphate'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zn</th>\
+                        <td>' + (feature.properties['Zn'] !== null ? autolinker.link(feature.properties['Zn'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Ammonia</th>\
+                        <td>' + (feature.properties['Ammonia'] !== null ? autolinker.link(feature.properties['Ammonia'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nitrite</th>\
+                        <td>' + (feature.properties['Nitrite'] !== null ? autolinker.link(feature.properties['Nitrite'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nitrate</th>\
+                        <td>' + (feature.properties['Nitrate'] !== null ? autolinker.link(feature.properties['Nitrate'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Sulphate</th>\
+                        <td>' + (feature.properties['Sulphate'] !== null ? autolinker.link(feature.properties['Sulphate'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cl</th>\
+                        <td>' + (feature.properties['Cl'] !== null ? autolinker.link(feature.properties['Cl'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">H2s</th>\
+                        <td>' + (feature.properties['H2s'] !== null ? autolinker.link(feature.properties['H2s'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Surfaktan</th>\
+                        <td>' + (feature.properties['Surfaktan'] !== null ? autolinker.link(feature.properties['Surfaktan'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">F-Coli</th>\
+                        <td>' + (feature.properties['F-Coli'] !== null ? autolinker.link(feature.properties['F-Coli'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">T-Coli</th>\
+                        <td>' + (feature.properties['T-Coli'] !== null ? autolinker.link(feature.properties['T-Coli'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">E-Coli</th>\
+                        <td>' + (feature.properties['E-Coli'] !== null ? autolinker.link(feature.properties['E-Coli'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
         function style_SamplingPoint_33_0() {
@@ -668,7 +767,7 @@
         bounds_group.addLayer(layer_SamplingPoint_33);
         map.addLayer(layer_SamplingPoint_33);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/SamplingPoint_33.png" /> SamplingPoint': layer_SamplingPoint_33,"1_Krig_TDS_1": layer_1_Krig_TDS_1_32,"1_Krig_Turbidity_1": layer_1_Krig_Turbidity_1_31,"1_Krig_pH_1": layer_1_Krig_pH_1_30,"1_Krig_DO_1": layer_1_Krig_DO_1_29,"1_Krig_COD_4": layer_1_Krig_COD_4_28,"1_Krig_BOD_1": layer_1_Krig_BOD_1_27,"1_Krig_Fe_1": layer_1_Krig_Fe_1_26,"1_Krig_Mn_1": layer_1_Krig_Mn_1_25,"1_Krig_Phosphate_1": layer_1_Krig_Phosphate_1_24,"1_Krig_Zn_1": layer_1_Krig_Zn_1_23,"1_Krig_Ammonia_1": layer_1_Krig_Ammonia_1_22,"1_Krig_Nitrite_1": layer_1_Krig_Nitrite_1_21,"1_Krig_Nitrate_1": layer_1_Krig_Nitrate_1_20,"1_Krig_Sulphate_1": layer_1_Krig_Sulphate_1_19,"1_Krig_Cl_1": layer_1_Krig_Cl_1_18,"1_Krig_H2s_1": layer_1_Krig_H2s_1_17,"1_Krig_Surfaktan_1": layer_1_Krig_Surfaktan_1_16,"1_Krig_F_Coli_1": layer_1_Krig_F_Coli_1_15,"1_Krig_T_Coli_1": layer_1_Krig_T_Coli_1_14,"1_Krig_E_Coli_1": layer_1_Krig_E_Coli_1_13,'<img src="legend/CommercialBuilding_12.png" /> Commercial Building': layer_CommercialBuilding_12,'<img src="legend/Wetland_11.png" /> Wetland': layer_Wetland_11,'<img src="legend/House_10.png" /> House': layer_House_10,'<img src="legend/Landfill_9.png" /> Landfill': layer_Landfill_9,'<img src="legend/Farmyard_8.png" /> Farmyard': layer_Farmyard_8,'<img src="legend/IndustrialBuilding_7.png" /> Industrial Building': layer_IndustrialBuilding_7,'<img src="legend/Education_6.png" /> Education': layer_Education_6,'<img src="legend/Farmland_5.png" /> Farmland': layer_Farmland_5,'<img src="legend/Commercial_4.png" /> Commercial': layer_Commercial_4,'<img src="legend/Residential_3.png" /> Residential': layer_Residential_3,'<img src="legend/Industrial_2.png" /> Industrial': layer_Industrial_2,'<img src="legend/repro_1.png" /> repro': layer_repro_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/SamplingPoint_33.png" /> SamplingPoint': layer_SamplingPoint_33,"TDS": layer_TDS_32,"Turbidity": layer_Turbidity_31,"pH": layer_pH_30,"DO": layer_DO_29,"COD": layer_COD_28,"BOD": layer_BOD_27,"Fe": layer_Fe_26,"Mn": layer_Mn_25,"Phosphate": layer_Phosphate_24,"Zn": layer_Zn_23,"Ammonia": layer_Ammonia_22,"Nitrite": layer_Nitrite_21,"Nitrate": layer_Nitrate_20,"Sulphate": layer_Sulphate_19,"Cl": layer_Cl_18,"H2S": layer_H2S_17,"Surfactant": layer_Surfactant_16,"F. Coli": layer_FColi_15,"T. Coli": layer_TColi_14,"E. Coli": layer_EColi_13,'<img src="legend/CommercialBuilding_12.png" /> Commercial Building': layer_CommercialBuilding_12,'<img src="legend/Wetland_11.png" /> Wetland': layer_Wetland_11,'<img src="legend/House_10.png" /> House': layer_House_10,'<img src="legend/Landfill_9.png" /> Landfill': layer_Landfill_9,'<img src="legend/Farmyard_8.png" /> Farmyard': layer_Farmyard_8,'<img src="legend/IndustrialBuilding_7.png" /> Industrial Building': layer_IndustrialBuilding_7,'<img src="legend/Education_6.png" /> Education': layer_Education_6,'<img src="legend/Farmland_5.png" /> Farmland': layer_Farmland_5,'<img src="legend/Commercial_4.png" /> Commercial': layer_Commercial_4,'<img src="legend/Residential_3.png" /> Residential': layer_Residential_3,'<img src="legend/Industrial_2.png" /> Industrial': layer_Industrial_2,'<img src="legend/repro_1.png" /> repro': layer_repro_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
         setBounds();
         var i = 0;
         layer_SamplingPoint_33.eachLayer(function(layer) {
